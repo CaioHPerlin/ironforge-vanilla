@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <h1 class="text-3xl font-bold">Teste</h1>
+    <h1 class="text-3xl font-bold">Oi</h1>
   </body>
+  <script>
+    const setTextToRed = () => {
+      const h1 = document.querySelector("h1");
+      h1.classList.push("text-red-500");
+    };
+
+    setInterval(() => {
+      setTextToRed();
+    }, 1000);
+  </script>
 </html>
