@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ironforge</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+  </head>
+
+  <body class="font-display">
+    <header class="w-full bg-primary text-white">
+      <div
+        class="2xl:container 2xl:mx-auto flex items-center 2xl:justify-between gap-3 xl:gap-6 p-8"
+      >
+        <a href="/" class="flex justify-between items-center gap-3">
+          <div class="w-16">
+            <img class="w-full h-auto object-contain" src="../forge.png" alt="Ironforge" />
+          </div>
+          <span class="text-3xl">Ironforge</span>
+        </a>
+
+        <nav class="flex gap-1 xl:gap-3 items-center">
+          <a
+            class="bg-offwhite text-primary rounded-lg text-sm xl:text-base h-9 px-3 text-nowrap flex items-center justify-center"
+            href="/recommended"
+            >Recomendados</a
+          >
+          <a
+            class="hover:underline rounded-lg text-sm xl:text-base h-9 px-3 text-nowrap flex items-center justify-center"
+            href="/products/"
+            >Todos os Produtos</a
+          >
+          <a
+            class="hover:underline rounded-lg text-sm xl:text-base h-9 px-3 text-nowrap flex items-center justify-center"
+            href="/contact"
+            >Contato</a
+          >
+        </nav>
+
+        <form aria-label="search" class="w-full">
+          <div class="rounded-full px-4 bg-white flex items-center gap-2 w-full">
+            <input
+              class="placeholder-gray-400 py-1.5 w-full text-black focus:outline-none"
+              type="text"
+              placeholder="Encontrar hardware..."
+            />
+            <button class="text-primary ml-auto cursor-pointer">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                class="size-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                />
+              </svg>
+            </button>
+          </div>
+        </form>
+
+        <div class="flex items-center gap-2 xl:gap-4">
+          <button
+            aria-label="cart"
+            class="cursor-pointer text-white hover:bg-white hover:text-primary duration-150 border-2 border-white rounded-lg h-9 px-3"
+          >
+            <i class="bi bi-cart text-base xl:text-xl"></i>
+          </button>
+
+          <button
+            href="/login/index.html"
+            class="cursor-pointer rounded-lg text-sm xl:text-base h-9 border-2 border-white bg-white text-primary px-3 text-nowrap flex items-center justify-center"
+          >
+            Criar Conta
+          </button>
+          <button
+            class="cursor-pointer hover:bg-white text-sm xl:text-base hover:text-primary duration-150 rounded-lg h-9 border-2 border-white px-3 text-nowrap flex items-center justify-center"
+          >
+            Entrar
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="bg-bg min-h-[calc(100vh-6rem)] pt-10 pb-10 px-8">
+      <div class="w-fit bg-white rounded-xl px-9 pt-4 pb-8 mx-auto">
+        <h1 class="text-2xl font-semibold text-primary">Preencha suas informações</h1>
+
+        <form aria-label="register" class="px-2 mt-6" id="registerForm" novalidate>
+          <div class="flex flex-col gap-6">
+            <div class="flex flex-row gap-4">
+              <div class="flex flex-col gap-1">
+                <label for="name" class="text-primary">Primeiro Nome</label>
+                <input
+                  type="text"
+                  class="border-1 border-primary px-4 py-2 rounded-lg"
+                  id="name"
+                  name="name"
+                  placeholder="Insira seu Nome"
+                  required
+                />
+                <small class="text-red-500 hidden" id="nameError"
+                  >Nome é um campo obrigatório.</small
+                >
+              </div>
+              <div class="flex flex-col gap-1">
+                <label for="surname" class="text-primary">Sobrenome</label>
+                <input
+                  type="text"
+                  class="border-1 border-primary px-4 py-2 rounded-lg"
+                  id="surname"
+                  name="surname"
+                  placeholder="Insira seu Sobrenome"
+                  required
+                />
+                <small class="text-red-500 hidden" id="surnameError"
+                  >Sobrenome é um campo obrigatório.</small
+                >
+              </div>
+            </div>
+            <div class="flex flex-col gap-1">
+              <label for="email" class="text-primary">E-mail</label>
+              <input
+                type="email"
+                class="border-1 border-primary px-4 py-2 rounded-lg"
+                id="email"
+                name="email"
+                placeholder="example@123.com"
+                required
+              />
+              <small class="text-red-500 hidden" id="emailError">E-mail inválido.</small>
+            </div>
+            <div class="flex flex-row gap-4">
+              <div class="flex flex-col gap-1">
+                <label for="password" class="text-primary">Senha</label>
+                <input
+                  type="password"
+                  class="border-1 border-primary px-4 py-2 rounded-lg"
+                  id="password"
+                  name="password"
+                  placeholder="********"
+                  required
+                />
+                <small class="text-red-500 hidden" id="passwordError"
+                  >A senha deve ter, no mínimo, 6 caracteres.</small
+                >
+              </div>
+              <div class="flex flex-col gap-1">
+                <label for="confirmPassword" class="text-primary">Confirme sua Senha</label>
+                <input
+                  type="password"
+                  class="border-1 border-primary px-4 py-2 rounded-lg"
+                  id="confirmPassword"
+                  name="confirm_password"
+                  placeholder="********"
+                  required
+                />
+                <small class="text-red-500 hidden" id="confirmPasswordError"
+                  >As senhas não coincidem.</small
+                >
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <button
+                type="submit"
+                id="submitButton"
+                class="bg-secondary text-center font-medium py-3 text-white rounded-lg px-3 hover:bg-primary duration-150 cursor-pointer"
+              >
+                Criar Conta
+              </button>
+              <a
+                href="/login/index.html"
+                class="bg-white border-1 border-primary font-medium text-center text-primary py-3 rounded-lg px-3 hover:underline cursor-pointer"
+              >
+                Entrar
+              </a>
+            </div>
+            <a href="#forgot-password" class="font-semibold text-primary mx-auto underline">
+              Esqueceu sua Senha?
+            </a>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <footer class="bg-primary text-white py-8">
+      <div
+        class="2xl:container 2xl:mx-auto grid grid-cols-4 justify-between gap-20 pt-4 pb-10 px-12"
+      >
+        <div class="flex flex-col gap-4">
+          <img class="w-[100px] h-auto mx-auto" src="../forge.png" alt="" />
+          <div class="text-xl flex items-center justify-center gap-5">
+            <i class="bi bi-twitter-x"></i>
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-youtube"></i>
+            <i class="bi bi-linkedin"></i>
+          </div>
+        </div>
+        <div class="flex flex-col gap-2">
+          <a href="/products" class="mb-4 font-semibold hover:underline">Produtos</a>
+          <a href="#graphics-cards" class="hover:underline">Placas de Vídeo</a>
+          <a href="#monitors" class="hover:underline">Monitores</a>
+          <a href="#processors" class="hover:underline">Processadores</a>
+          <a href="#memory" class="hover:underline">Memórias</a>
+          <a href="#motherboards" class="hover:underline">Placas-Mãe</a>
+          <a href="#power-supplies" class="hover:underline">Fontes</a>
+          <a href="#cases" class="hover:underline">Gabinetes</a>
+          <a href="#peripherals" class="hover:underline">Periféricos</a>
+          <a href="#storage" class="hover:underline">Armazenamento</a>
+        </div>
+        <div class="flex flex-col gap-2">
+          <a href="#info" class="mb-4 font-semibold hover:underline">Informações</a>
+          <a href="#faq" class="hover:underline">FAQ</a>
+          <a href="#terms-of-service" class="hover:underline">Termos de Serviço</a>
+          <a href="#contact" class="hover:underline">Contato</a>
+          <a href="#customer-service" class="hover:underline">Atendimento ao Cliente</a>
+        </div>
+        <div class="flex flex-col gap-2">
+          <a href="/products" class="mb-4 font-semibold hover:underline">Conta</a>
+          <a href="#account-recovery" class="hover:underline">Recuperar Conta</a>
+          <a href="#create-account" class="hover:underline">Criar Conta</a>
+          <a href="#login" class="hover:underline">Entrar</a>
+          <a href="#change-address" class="hover:underline">Alterar Endereço</a>
+          <a href="#my-orders" class="hover:underline">Meus Pedidos</a>
+          <a href="#request-refund" class="hover:underline">Solicitar Reembolso</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
