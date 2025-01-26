@@ -9,3 +9,5 @@ const getRole = () => {
 const logout = () => {
   localStorage.removeItem('role');
 };
+
+export { setRole, getRole, logout };
