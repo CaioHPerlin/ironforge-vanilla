@@ -1,0 +1,26 @@
+{
+  "/404": {
+    "title": "Página não encontrada.",
+    "description": "A página que você tentou acessar não existe."
+  },
+  "/": {
+    "title": "Home",
+    "description": "Página inicial."
+  },
+  "/produtos": {
+    "title": "Produtos",
+    "description": "Lista de produtos."
+  },
+  "/produtos/000": {
+    "title": "Produto #000",
+    "description": "Produto #000."
+  },
+  "/login": {
+    "title": "Login",
+    "description": "Faça login na sua conta."
+  },
+  "/cadastro": {
+    "title": "Cadastro",
+    "description": "Crie uma conta."
+  }
+}

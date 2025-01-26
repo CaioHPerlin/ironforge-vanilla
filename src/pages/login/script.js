@@ -1,5 +1,5 @@
 // Form validation
-document.getElementById('loginForm').addEventListener('submit', e => {
+document.getElementById('loginForm').addEventListener('submit', (e) => {
   e.preventDefault();
 
   const email = document.getElementById('email').value;
@@ -46,7 +46,7 @@ document.getElementById('loginForm').addEventListener('submit', e => {
   }, 5000);
 });
 
-const isValidEmail = email => {
+const isValidEmail = (email) => {
   if (typeof email !== 'string') return false;
 
   const atIndex = email.indexOf('@');

@@ -1,0 +1,53 @@
+<div class="w-fit bg-white rounded-xl px-9 pt-4 pb-8 mx-auto">
+  <h1 class="text-2xl font-semibold text-primary">Preencha suas informações</h1>
+
+  <form aria-label="login" action="" class="px-2 mt-6" id="loginForm" novalidate>
+    <div class="flex flex-col gap-6">
+      <div class="flex flex-col gap-1">
+        <label for="email" class="text-primary">E-mail</label>
+        <input
+          type="email"
+          class="border-1 border-primary px-4 py-2 rounded-lg"
+          id="email"
+          name="email"
+          placeholder="example@123.com"
+          required
+        />
+        <small class="text-red-500 hidden" id="emailError">E-mail inválido.</small>
+      </div>
+
+      <div class="flex flex-col gap-1">
+        <label for="password" class="text-primary">Senha</label>
+        <input
+          type="password"
+          class="border-1 border-primary px-4 py-2 rounded-lg"
+          id="password"
+          name="password"
+          placeholder="********"
+          required
+        />
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <button
+          type="submit"
+          id="submitButton"
+          class="bg-secondary font-medium py-3 text-white rounded-lg px-3 hover:bg-primary duration-150 cursor-pointer"
+        >
+          Entrar
+        </button>
+        <a
+          href="/cadastro/index.html"
+          type="button"
+          class="bg-white border-1 text-center border-primary font-medium text-primary py-3 rounded-lg px-3 hover:underline cursor-pointer"
+        >
+          Criar Conta
+        </a>
+      </div>
+
+      <a href="#forgot-password" class="font-semibold text-primary mx-auto underline"
+        >Esqueceu sua Senha?</a
+      >
+    </div>
+  </form>
+</div>

@@ -1,4 +1,4 @@
-document.getElementById('registerForm').addEventListener('submit', async e => {
+document.getElementById('signupForm').addEventListener('submit', async (e) => {
   e.preventDefault();
 
   const name = document.getElementById('name').value.trim();
@@ -17,7 +17,7 @@ document.getElementById('registerForm').addEventListener('submit', async e => {
     element.classList.remove('hidden');
   };
 
-  const hideError = element => {
+  const hideError = (element) => {
     element.classList.add('hidden');
     element.textContent = '';
   };
@@ -80,15 +80,15 @@ document.getElementById('registerForm').addEventListener('submit', async e => {
   }, 5000);
 });
 
-const isValidEmail = email => {
+const isValidEmail = (email) => {
   const atIndex = email.indexOf('@');
   const dotIndex = email.lastIndexOf('.');
   return atIndex > 0 && dotIndex > atIndex + 1 && dotIndex < email.length - 1;
 };
 
-const checkEmailExists = async email => {
+const checkEmailExists = async (email) => {
   const existingEmails = ['usuario@exemplo.com'];
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     setTimeout(() => resolve(existingEmails.includes(email)), 500);
   });
 };
