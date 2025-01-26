@@ -2,12 +2,37 @@
 @import url('../node_modules/bootstrap-icons/font/bootstrap-icons.css');
 @import 'tailwindcss';
 
-/* csslint-disable-next-line */
 @theme {
   --color-primary: #0d73b2;
   --color-secondary: #1da1f2;
   --color-tertiary: #2b2d42;
   --color-offwhite: #f5f5f5;
   --color-bg: #edf2f4;
+  --color-toast-error: #d94958;
+  --color-toast-success: #34c759;
   --font-display: 'Inter', 'serif';
+  --animate-fade-down: fade-down 0.5s ease-out;
+  --animate-fade-out-right: fade-out-right 0.5s ease-in;
+}
+
+@keyframes fade-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-out-right {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(6rem);
+  }
 }

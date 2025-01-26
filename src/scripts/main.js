@@ -1,5 +1,5 @@
 import './router';
-import './auth';
+import './toast';
 import { getRole, logout, setRole } from './auth';
 
 document.addEventListener('DOMContentLoaded', () => {
