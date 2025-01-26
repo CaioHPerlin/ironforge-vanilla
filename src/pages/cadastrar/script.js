@@ -1,5 +1,5 @@
-document.getElementById('signupForm').addEventListener('submit', async (e) => {
-  e.preventDefault();
+document.getElementById('signupForm').addEventListener('submit', async (event) => {
+  event.preventDefault();
 
   const name = document.getElementById('name').value.trim();
   const surname = document.getElementById('surname').value.trim();

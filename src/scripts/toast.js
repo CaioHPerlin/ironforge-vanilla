@@ -32,9 +32,9 @@ const removeToast = (toast) => {
   });
 };
 
-document.addEventListener('click', (e) => {
-  if (e.target.closest('.toast')) {
-    const toast = e.target.closest('.toast');
+document.addEventListener('click', (event) => {
+  if (event.target.closest('.toast')) {
+    const toast = event.target.closest('.toast');
     removeToast(toast);
   }
 });

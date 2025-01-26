@@ -1,6 +1,6 @@
 // Form validation
-document.getElementById('loginForm').addEventListener('submit', (e) => {
-  e.preventDefault();
+document.getElementById('loginForm').addEventListener('submit', (event) => {
+  event.preventDefault();
 
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;

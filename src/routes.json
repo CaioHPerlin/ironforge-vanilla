@@ -22,5 +22,9 @@
   "/cadastrar": {
     "title": "Cadastro",
     "description": "Crie uma conta."
+  },
+  "/pesquisar/produto-exemplo": {
+    "title": "Pesquisa por produto-exemplo",
+    "description": "Pesquisa por produto-exemplo."
   }
 }

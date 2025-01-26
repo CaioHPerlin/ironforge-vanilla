@@ -8,12 +8,15 @@ document.addEventListener('click', (event) => {
   navigate(event);
 });
 
-const navigate = (event) => {
-  event.preventDefault();
-  const href = event.target.href;
-
+const navigate = (eventOrPath) => {
   // Make sure browser navigation is not blocked
-  window.history.pushState({}, '', href);
+  if (eventOrPath instanceof Event) {
+    eventOrPath.preventDefault();
+    const href = eventOrPath.target.href;
+    window.history.pushState({}, '', href);
+  } else if (typeof eventOrPath === 'string') {
+    window.history.pushState({}, '', eventOrPath);
+  }
 
   handleUrl();
 };

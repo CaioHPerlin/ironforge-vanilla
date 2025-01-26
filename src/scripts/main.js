@@ -2,15 +2,16 @@ import './router';
 import './toast';
 import { getRole, logout, setRole } from './auth';
 
-document.addEventListener('DOMContentLoaded', () => {
-  updateViewForRole();
-});
-
-document.addEventListener('keypress', (e) => {
-  if (e.key === 'r') {
+document.addEventListener('keypress', (event) => {
+  if (event.key === 'r') {
     console.log('role update');
     getRole() ? logout() : setRole('user');
     updateViewForRole();
+  }
+
+  if (event.key === 'a') {
+    console.log('update');
+    window.route(event);
   }
 });
 
@@ -27,3 +28,13 @@ const updateViewForRole = () => {
     userContent.forEach((el) => el.classList.remove('hidden'));
   }
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+  updateViewForRole();
+
+  const searchForm = document.querySelector('header form[aria-label="search"]');
+  searchForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    window.route('/pesquisar/produto-exemplo');
+  });
+});
