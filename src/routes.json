@@ -4,7 +4,7 @@
     "description": "A página que você tentou acessar não existe."
   },
   "/": {
-    "title": "Home",
+    "title": "Página inicial",
     "description": "Página inicial."
   },
   "/produtos": {
@@ -15,11 +15,11 @@
     "title": "Produto #000",
     "description": "Produto #000."
   },
-  "/login": {
-    "title": "Login",
+  "/entrar": {
+    "title": "Entrar",
     "description": "Faça login na sua conta."
   },
-  "/cadastro": {
+  "/cadastrar": {
     "title": "Cadastro",
     "description": "Crie uma conta."
   }
