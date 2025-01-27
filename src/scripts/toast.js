@@ -38,3 +38,5 @@ document.addEventListener('click', (event) => {
     removeToast(toast);
   }
 });
+
+export { showToast };

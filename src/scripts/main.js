@@ -1,9 +1,10 @@
 import './router';
 import './toast';
+import './cart';
 import { getRole, logout, setRole } from './auth';
 
-document.addEventListener('keypress', (event) => {
-  if (event.key === 'r') {
+document.addEventListener('keydown', (event) => {
+  if (event.ctrlKey && event.key === '`') {
     console.log('role update');
     getRole() ? logout() : setRole('user');
     updateViewForRole();

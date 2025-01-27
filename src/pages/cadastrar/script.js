@@ -1,94 +1,105 @@
-document.getElementById('signupForm').addEventListener('submit', async (event) => {
-  event.preventDefault();
+import { isValidEmail, isValidName, isValidPassword } from '../../scripts/utils';
+import { showToast } from '../../scripts/toast';
 
+const showError = (element, condition) => {
+  if (condition) {
+    element.classList.remove('hidden');
+  } else {
+    element.classList.add('hidden');
+  }
+};
+
+const validateRegisterForm = () => {
   const name = document.getElementById('name').value.trim();
   const surname = document.getElementById('surname').value.trim();
   const email = document.getElementById('email').value.trim();
-  const password = document.getElementById('password').value;
-  const confirmPassword = document.getElementById('confirmPassword').value;
+  const password = document.getElementById('password').value.trim();
+  const confirmPassword = document.getElementById('confirmPassword').value.trim();
 
-  const emailError = document.getElementById('emailError');
   const nameError = document.getElementById('nameError');
   const surnameError = document.getElementById('surnameError');
+  const emailError = document.getElementById('emailError');
   const passwordError = document.getElementById('passwordError');
-
-  const showError = (element, message = '') => {
-    element.textContent = message;
-    element.classList.remove('hidden');
-  };
-
-  const hideError = (element) => {
-    element.classList.add('hidden');
-    element.textContent = '';
-  };
+  const confirmPasswordError = document.getElementById('confirmPasswordError');
 
   let isValid = true;
 
-  if (name.length < 2) {
-    showError(nameError, 'Nome é um campo obrigatório.');
+  // Validate name
+  if (!isValidName(name)) {
+    showError(nameError, true);
     isValid = false;
   } else {
-    hideError(nameError);
+    showError(nameError, false);
   }
 
-  if (surname.length < 2) {
-    showError(surnameError, 'Sobrenome é um campo obrigatório.');
+  // Validate surname
+  if (!isValidName(surname)) {
+    showError(surnameError, true);
     isValid = false;
   } else {
-    hideError(surnameError);
+    showError(surnameError, false);
   }
 
-  if (password.length < 6 || !password) {
-    showError(passwordError, 'A senha deve ter, no mínimo, 6 caracteres.');
-    isValid = false;
-  } else if (password !== confirmPassword) {
-    showError(passwordError, 'As senhas não coincidem.');
-    isValid = false;
-  } else {
-    hideError(passwordError);
-  }
-
+  // Validate email
   if (!isValidEmail(email)) {
-    showError(emailError, 'E-mail inválido.');
+    showError(emailError, true);
     isValid = false;
   } else {
-    const emailExists = await checkEmailExists(email);
-    if (emailExists) {
-      showError(emailError, 'Este e-mail já está associado à uma conta.');
-      isValid = false;
-    } else {
-      hideError(emailError);
-    }
+    showError(emailError, false);
   }
 
-  if (!isValid) return;
+  // Validate password
+  if (!isValidPassword(password)) {
+    showError(passwordError, true);
+    isValid = false;
+  } else {
+    showError(passwordError, false);
+  }
 
-  Toastify({
-    text: 'Conta criada com sucesso! Verifique seu e-mail para validar seu cadastro.',
-    duration: 3000,
-    close: true,
-    gravity: 'bottom',
-    position: 'left',
-    style: { background: '#34C759' },
-  }).showToast();
+  // Validate confirm password
+  if (password !== confirmPassword) {
+    showError(confirmPasswordError, true);
+    isValid = false;
+  } else {
+    showError(confirmPasswordError, false);
+  }
 
-  const submitButton = document.getElementById('submitButton');
-  submitButton.textContent = 'Criando...';
-  setTimeout(() => {
-    submitButton.textContent = 'Criar Conta';
-    window.location.href = '/signed/index.html';
-  }, 5000);
-});
-
-const isValidEmail = (email) => {
-  const atIndex = email.indexOf('@');
-  const dotIndex = email.lastIndexOf('.');
-  return atIndex > 0 && dotIndex > atIndex + 1 && dotIndex < email.length - 1;
+  return { isValid, name, surname, email, password };
 };
 
-const checkEmailExists = async (email) => {
+const handleRegister = ({ name, surname, email, password }) => {
   const existingEmails = ['usuario@exemplo.com'];
-  return new Promise((resolve) => {
-    setTimeout(() => resolve(existingEmails.includes(email)), 500);
-  });
+
+  if (existingEmails.includes(email)) {
+    showToast('Este e-mail já está associado a uma conta.', 'error');
+    return;
+  }
+
+  // Simulate delay for user feedback
+  const submitButton = document.getElementById('submitButton');
+  submitButton.textContent = 'Registrando...';
+
+  setTimeout(() => {
+    submitButton.textContent = 'Registrar';
+    window.route('/');
+    setRole('user');
+    showToast(
+      'Conta criada com sucesso! Verifique seu e-mail para validar seu cadastro.',
+      'success',
+    );
+  }, 3000);
 };
+
+// Attach event listener to form
+document.getElementById('signupForm').addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const { isValid, ...formData } = validateRegisterForm();
+
+  if (!isValid) {
+    showToast('Por favor, corrija os erros no formulário.', 'error');
+    return;
+  }
+
+  handleRegister(formData);
+});

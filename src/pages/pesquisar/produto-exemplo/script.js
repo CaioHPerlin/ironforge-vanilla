@@ -1,4 +1,4 @@
-let productQuantity = 321;
+let productQuantity = 120;
 const originalQuantity = productQuantity;
 const tagsContainer = document.querySelector('#tags');
 

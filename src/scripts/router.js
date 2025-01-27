@@ -60,13 +60,12 @@ const loadScript = async (src) => {
     const scriptContent = await response.text();
 
     if (scriptContent.startsWith('<!DOCTYPE html>')) {
-      throw new Error('HTML content detected');
+      return;
     }
 
-    const wrappedScriptContent = `(function() { ${scriptContent} \n})();`;
-
     const script = document.createElement('script');
-    script.textContent = wrappedScriptContent;
+    script.textContent = scriptContent;
+    script.type = 'module';
     document.body.appendChild(script);
   } catch (error) {
     console.error(`Failed to load script: ${src}`, error);
