@@ -66,6 +66,7 @@
 
         <div class="flex items-center gap-2 xl:gap-4">
           <button
+            id="cartButton"
             aria-label="cart"
             class="cursor-pointer text-white hover:bg-white hover:text-primary duration-150 border-2 border-white rounded-lg h-9 px-3"
           >
@@ -140,10 +141,45 @@
       </div>
     </footer>
 
+    <div id="cart-container" class="hidden z-40 fixed top-0 left-0 w-full h-[100vw]">
+      <div
+        class="w-full h-full bg-black opacity-20 absolute cursor-pointer"
+        aria-label="close-cart"
+      ></div>
+
+      <div class="w-1/4 bg-offwhite h-full absolute left-0 top-0 p-8 text-primary">
+        <button aria-label="close-cart" class="absolute top-4 right-4 cursor-pointer">
+          <i class="bi bi-x text-4xl text-black"></i>
+        </button>
+        <h1 class="text-center font-semibold text-3xl">Carrinho de Compras</h1>
+        <div
+          id="cart-products-container"
+          class="flex flex-col gap-5 py-4 border-b-2 border-primary"
+        ></div>
+        <div id="cart-total-container" class="text-3xl font-semibold text-center py-2">
+          Total: R$ 19.98
+        </div>
+        <div class="flex flex-row gap-4 mt-5">
+          <button
+            aria-label="close-cart"
+            class="hover:bg-primary hover:text-white duration-150 cursor-pointer rounded-lg text-[13px] xl:text-base font-weight-600 h-9 border-1 border-primary bg-white text-primary flex-1 text-nowrap flex items-center justify-center"
+          >
+            Cancelar
+          </button>
+          <a
+            href="/checkout"
+            class="bg-primary text-white duration-150 cursor-pointer rounded-lg text-[13px] xl:text-base font-weight-600 h-9 border-1 border-primary hover:underline flex-1 text-nowrap flex items-center justify-center"
+            >Finalizar Compra</a
+          >
+        </div>
+      </div>
+    </div>
+
     <div
       id="toast-container"
       class="select-none cursor-pointer shadow fixed bottom-4 left-4 z-50 flex flex-col gap-2"
     ></div>
+
     <script src="scripts/main.js" type="module"></script>
   </body>
 </html>
