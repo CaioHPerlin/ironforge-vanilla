@@ -47,9 +47,38 @@
     </button>
   </div>
 
-  <section class="bg-white rounded-xl p-7">
+  <section class="bg-white rounded-xl p-12">
     <div class="flex flex-row">
-      <img src="../placeholder.png" alt="" />
+      <img class="aspect-square flex-1" src="../placeholder.png" alt="" />
+      <div class="flex-1 flex flex-col p-8 gap-4 text-primary">
+        <h1 class="text-4xl font-bold">Produto #000</h1>
+        <div class="flex flex-row gap-2">
+          <div class="text-primary border-1 border-primary px-2 py-1 rounded-lg">Placas-mãe</div>
+          <div class="text-toast-success border-1 border-toast-success px-2 py-1 rounded-lg">
+            Melhor preço
+          </div>
+        </div>
+        <h2 class="text-5xl text-primary font-semibold">R$9.99</h2>
+        <h3 class="font-semibold text-gray-700">5 unidades disponíveis.</h3>
+        <p class="text-gray-500 mb-4">
+          Produto #000 de Loja X Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Pellentesque ultrices molestie metus, et consectetur ante aliquet sed.
+        </p>
+        <button
+          id="addToCart"
+          class="bg-secondary text-center font-medium py-3 text-white rounded-lg px-3 hover:bg-primary duration-150 cursor-pointer"
+        >
+          Adicionar ao Carrinho
+        </button>
+
+        <div class="p-2 gap-4 flex flex-col border-1 border-gray-200 text-black">
+          <h1 class="font-bold">Pergunta Relevante</h1>
+          <p>
+            Resposta Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ultrices
+            molestie metus, et consectetur ante aliquet sed. Maecenas porttitor et.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
