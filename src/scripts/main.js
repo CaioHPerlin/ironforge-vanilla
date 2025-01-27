@@ -1,6 +1,8 @@
 import './router';
 import './toast';
 import './cart';
+import './auth';
+import { showToast } from './toast';
 import { getRole, logout, setRole } from './auth';
 
 document.addEventListener('keydown', (event) => {
@@ -32,5 +34,17 @@ document.addEventListener('DOMContentLoaded', () => {
   searchForm.addEventListener('submit', (event) => {
     event.preventDefault();
     window.route('/pesquisar/produto-exemplo');
+  });
+
+  const checkoutButton = document.querySelector('#checkout-button');
+  checkoutButton.addEventListener('click', () => {
+    const role = getRole();
+
+    if (!role) {
+      showToast('Você precisa estar autenticado para finalizar a compra.', 'error');
+      return;
+    }
+
+    window.route('/finalizar-compra');
   });
 });
