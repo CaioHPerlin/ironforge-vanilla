@@ -8,11 +8,6 @@ document.addEventListener('keypress', (event) => {
     getRole() ? logout() : setRole('user');
     updateViewForRole();
   }
-
-  if (event.key === 'a') {
-    console.log('update');
-    window.route(event);
-  }
 });
 
 const updateViewForRole = () => {

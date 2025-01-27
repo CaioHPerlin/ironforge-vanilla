@@ -9,7 +9,6 @@ document.addEventListener('click', (event) => {
 });
 
 const navigate = (eventOrPath) => {
-  // Make sure browser navigation is not blocked
   if (eventOrPath instanceof Event) {
     eventOrPath.preventDefault();
     const href = eventOrPath.target.href;
@@ -37,21 +36,41 @@ const handleUrl = async () => {
   const routeHtml = `${routeFolder}index.html`;
   const routeScript = `${routeFolder}script.js`;
 
+  // Fetch and insert the HTML content
   const html = await fetch(routeHtml).then((response) => response.text());
   document.querySelector('main').innerHTML = html;
 
-  const script = await fetch(routeScript).then((response) => response.text());
-
-  // For some reason the Fetch API returns the html file when the routeScript is not found
-  // This probably happens because the server is configured to return index.html when the file is not found
-  if (script.startsWith('<!DOCTYPE html>')) {
-    return;
+  // Remove any previously loaded scripts
+  const existingScript = document.querySelector(`script[src="${routeScript}"]`);
+  if (existingScript) {
+    existingScript.remove();
   }
 
-  const scriptElement = document.createElement('script');
-  scriptElement.src = routeScript;
-  scriptElement.type = 'module';
-  document.body.appendChild(scriptElement);
+  // Attempt to load and execute the route's script
+  try {
+    await loadScript(routeScript);
+  } catch (error) {
+    console.error(`Failed to load script for route: ${path}`, error);
+  }
+};
+
+const loadScript = async (src) => {
+  try {
+    const response = await fetch(src);
+    const scriptContent = await response.text();
+
+    if (scriptContent.startsWith('<!DOCTYPE html>')) {
+      throw new Error('HTML content detected');
+    }
+
+    const wrappedScriptContent = `(function() { ${scriptContent} \n})();`;
+
+    const script = document.createElement('script');
+    script.textContent = wrappedScriptContent;
+    document.body.appendChild(script);
+  } catch (error) {
+    console.error(`Failed to load script: ${src}`, error);
+  }
 };
 
 window.onpopstate = handleUrl;
