@@ -41,20 +41,22 @@ const handleUrl = async () => {
   document.querySelector('main').innerHTML = html;
 
   // Remove any previously loaded scripts
-  const existingScript = document.querySelector(`script[src="${routeScript}"]`);
+  let scriptId = routeScript.split('/').slice(0, -1).join('-');
+  const existingScript = document.querySelector(`#script${scriptId}`);
   if (existingScript) {
     existingScript.remove();
+    console.log(`Removed existing script for route: ${scriptId}`);
   }
 
   // Attempt to load and execute the route's script
   try {
-    await loadScript(routeScript);
+    await loadScript(routeScript, scriptId);
   } catch (error) {
     console.error(`Failed to load script for route: ${path}`, error);
   }
 };
 
-const loadScript = async (src) => {
+const loadScript = async (src, scriptId) => {
   try {
     const response = await fetch(src);
     const scriptContent = await response.text();
@@ -64,6 +66,7 @@ const loadScript = async (src) => {
     }
 
     const script = document.createElement('script');
+    script.id = `script${scriptId}`; // Use the refined ID
     script.textContent = scriptContent;
     script.type = 'module';
     document.body.appendChild(script);

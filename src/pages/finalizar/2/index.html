@@ -1,0 +1,254 @@
+<div class="2xl:container 2xl:mx-auto flex flex-col gap-4">
+  <div id="tags" class="w-full flex flex-row align-middle gap-2">
+    <button
+      class="hover:bg-primary hover:text-white duration-150 cursor-pointer rounded-lg text-[13px] xl:text-base font-weight-600 h-9 border-1 border-primary bg-white text-primary flex-1 text-nowrap flex items-center justify-center"
+    >
+      Placas de Vídeo
+    </button>
+    <button
+      class="hover:bg-primary hover:text-white duration-150 cursor-pointer rounded-lg text-[13px] xl:text-base font-weight-600 h-9 border-1 border-primary bg-white text-primary flex-1 text-nowrap flex items-center justify-center"
+    >
+      Placas-Mãe
+    </button>
+    <button
+      class="hover:bg-primary hover:text-white duration-150 cursor-pointer rounded-lg text-[13px] xl:text-base font-weight-600 h-9 border-1 border-primary bg-white text-primary flex-1 text-nowrap flex items-center justify-center"
+    >
+      Memórias
+    </button>
+    <button
+      class="hover:bg-primary hover:text-white duration-150 cursor-pointer rounded-lg text-[13px] xl:text-base font-weight-600 h-9 border-1 border-primary bg-white text-primary flex-1 text-nowrap flex items-center justify-center"
+    >
+      Processadores
+    </button>
+    <button
+      class="hover:bg-primary hover:text-white duration-150 cursor-pointer rounded-lg text-[13px] xl:text-base font-weight-600 h-9 border-1 border-primary bg-white text-primary flex-1 text-nowrap flex items-center justify-center"
+    >
+      Coolers
+    </button>
+    <button
+      class="hover:bg-primary hover:text-white duration-150 cursor-pointer rounded-lg text-[13px] xl:text-base font-weight-600 h-9 border-1 border-primary bg-white text-primary flex-1 text-nowrap flex items-center justify-center"
+    >
+      Fontes
+    </button>
+    <button
+      class="hover:bg-primary hover:text-white duration-150 cursor-pointer rounded-lg text-[13px] xl:text-base font-weight-600 h-9 border-1 border-primary bg-white text-primary flex-1 text-nowrap flex items-center justify-center"
+    >
+      Periféricos
+    </button>
+    <button
+      class="hover:bg-primary hover:text-white duration-150 cursor-pointer rounded-lg text-[13px] xl:text-base font-weight-600 h-9 border-1 border-primary bg-white text-primary flex-1 text-nowrap flex items-center justify-center"
+    >
+      Gabinetes
+    </button>
+    <button
+      class="hover:bg-primary hover:text-white duration-150 cursor-pointer rounded-lg text-[13px] xl:text-base font-weight-600 h-9 border-1 border-primary bg-white text-primary flex-1 text-nowrap flex items-center justify-center"
+    >
+      Armazenamento
+    </button>
+  </div>
+  <section class="bg-white rounded-xl px-7 pt-2.5 pb-12">
+    <h1 class="text-primary text-2xl font-semibold pb-2">Forma de Pagamento</h1>
+    <div class="flex flex-row">
+      <div class="flex-1 w-1/2 pr-16 border-r-2 border-primary">
+        <form
+          aria-label="address-form"
+          class="px-2 mt-2 gap-2 flex flex-col"
+          id="addressForm"
+          novalidate
+        >
+          <div class="flex flex-col gap-1 text-primary text-xl">
+            <div class="flex items-center gap-2">
+              <input type="radio" checked id="pix" name="paymentMethod" value="pix" required />
+              <label for="pix" class="flex items-center gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 512 512"
+                  class="w-6 h-6"
+                >
+                  <path
+                    d="M242.4 292.5C247.8 287.1 257.1 287.1 262.5 292.5L339.5 369.5C353.7 383.7 372.6 391.5 392.6 391.5H407.7L310.6 488.6C280.3 518.1 231.1 518.1 200.8 488.6L103.3 391.2H112.6C132.6 391.2 151.5 383.4 165.7 369.2L242.4 292.5zM262.5 218.9C256.1 224.4 247.9 224.5 242.4 218.9L165.7 142.2C151.5 127.1 132.6 120.2 112.6 120.2H103.3L200.7 22.8C231.1-7.6 280.3-7.6 310.6 22.8L407.8 119.9H392.6C372.6 119.9 353.7 127.7 339.5 141.9L262.5 218.9zM112.6 142.7C126.4 142.7 139.1 148.3 149.7 158.1L226.4 234.8C233.6 241.1 243 245.6 252.5 245.6C261.9 245.6 271.3 241.1 278.5 234.8L355.5 157.8C365.3 148.1 378.8 142.5 392.6 142.5H430.3L488.6 200.8C518.9 231.1 518.9 280.3 488.6 310.6L430.3 368.9H392.6C378.8 368.9 365.3 363.3 355.5 353.5L278.5 276.5C264.6 262.6 240.3 262.6 226.4 276.6L149.7 353.2C139.1 363 126.4 368.6 112.6 368.6H80.8L22.8 310.6C-7.6 280.3-7.6 231.1 22.8 200.8L80.8 142.7H112.6z"
+                  />
+                </svg>
+                <span class="inline">Pix</span>
+              </label>
+            </div>
+            <div class="flex items-center gap-2">
+              <input
+                type="radio"
+                id="creditCard"
+                name="paymentMethod"
+                value="creditCard"
+                required
+              />
+              <label for="creditCard"
+                ><i class="bi bi-credit-card text-2xl pr-2"></i>Cartão de Crédito</label
+              >
+            </div>
+            <div class="flex items-center gap-2">
+              <input type="radio" id="boleto" name="paymentMethod" value="boleto" required />
+              <label for="boleto"><i class="bi bi-receipt text-2xl pr-2"></i>Boleto</label>
+            </div>
+
+            <small class="text-red-500 hidden" id="installmentsError"
+              >Selecione uma forma de pagamento.</small
+            >
+          </div>
+
+          <div id="installmentsField" class="flex-1 flex flex-col gap-1">
+            <label for="installments" class="text-primary">Parcelas</label>
+            <select
+              type="text"
+              class="border-1 border-primary px-4 h-[42px] rounded-lg"
+              id="installments"
+              name="installments"
+              placeholder="00x de R$XXXXXXXX"
+              required
+            >
+              <option value="one-time" class="text-gray-500">1x de R$XXXXXX</option>
+            </select>
+            <small class="text-red-500 hidden" id="installmentsError"
+              >Selecione uma opção de parcelas.</small
+            >
+          </div>
+
+          <div id="creditCardFields" class="hidden flex-col gap-3">
+            <div class="flex flex-row gap-3">
+              <div class="flex-1 flex flex-col gap-1">
+                <label for="cardNumber" class="text-primary">Número do Cartão</label>
+                <input
+                  type="text"
+                  class="border-1 border-primary px-4 py-2 rounded-lg"
+                  id="cardNumber"
+                  name="cardNumber"
+                  placeholder="XXXX XXXX XXXX XXXX"
+                  required
+                />
+                <small class="text-red-500 hidden" id="cardNumberError"
+                  >Número do cartão inválido.</small
+                >
+              </div>
+            </div>
+
+            <div class="flex flex-row gap-3 mt-2">
+              <div class="flex-1 w-1/3 flex flex-col gap-1">
+                <label for="cardName" class="text-primary">Nome do Titular</label>
+                <input
+                  type="text"
+                  class="border-1 border-primary px-4 py-2 rounded-lg"
+                  id="cardName"
+                  name="cardName"
+                  placeholder="Insira o nome do titular"
+                  required
+                />
+                <small class="text-red-500 hidden" id="cardNameError"
+                  >Insira o nome do titular.</small
+                >
+              </div>
+
+              <div class="flex-1 w-1/3 flex flex-col gap-1">
+                <label for="cardExpiry" class="text-primary">Validade</label>
+                <input
+                  type="text"
+                  class="border-1 border-primary px-4 py-2 rounded-lg"
+                  id="cardExpiry"
+                  name="cardExpiry"
+                  placeholder="MM/AA"
+                  required
+                />
+                <small class="text-red-500 hidden" id="cardExpiryError"
+                  >Data de validade inválida.</small
+                >
+              </div>
+
+              <div class="flex-1 w-1/3 flex flex-col gap-1">
+                <label for="cardCVC" class="text-primary">CVC</label>
+                <input
+                  type="text"
+                  class="border-1 border-primary w-full px-4 py-2 rounded-lg"
+                  id="cardCVC"
+                  name="cardCVC"
+                  placeholder="XXX"
+                  required
+                />
+                <small class="text-red-500 hidden" id="cardCVCError">CVC inválido.</small>
+              </div>
+            </div>
+
+            <div class="flex-1 flex flex-col gap-1 mt-2">
+              <label for="cardCPF" class="text-primary">CPF</label>
+              <input
+                type="text"
+                class="border-1 border-primary px-4 py-2 rounded-lg"
+                id="cardCPF"
+                name="cardCPF"
+                placeholder="XXX.XXX.XXX-XX"
+                required
+              />
+              <small class="text-red-500 hidden" id="cardCPFError">CPF inválido.</small>
+            </div>
+          </div>
+
+          <div id="boletoFields" class="hidden flex-col gap-2">
+            <div class="flex flex-row gap-3">
+              <div class="flex-1 flex flex-col gap-1">
+                <label for="boletoName" class="text-primary">Nome Completo</label>
+                <input
+                  type="text"
+                  class="border-1 border-primary px-4 py-2 rounded-lg"
+                  id="boletoName"
+                  name="boletoName"
+                  placeholder="Insira o nome completo"
+                  required
+                />
+                <small class="text-red-500 hidden" id="boletoNameError"
+                  >Insira o nome completo.</small
+                >
+              </div>
+            </div>
+
+            <div class="flex flex-row gap-3 mt-2">
+              <div class="flex-1 flex flex-col gap-1">
+                <label for="boletoCPF" class="text-primary">CPF</label>
+                <input
+                  type="text"
+                  class="border-1 border-primary px-4 py-2 rounded-lg"
+                  id="boletoCPF"
+                  name="boletoCPF"
+                  placeholder="XXX.XXX.XXX-XX"
+                  required
+                />
+                <small class="text-red-500 hidden" id="boletoCPFError">CPF inválido.</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <div class="flex flex-row gap-4 mt-5 w-1/2 self-end">
+              <a
+                href="/"
+                class="hover:bg-primary text-center hover:text-white duration-150 cursor-pointer rounded-lg text-[13px] xl:text-base font-weight-600 h-9 border-1 border-primary bg-white text-primary flex-1 text-nowrap flex items-center justify-center"
+              >
+                Cancelar
+              </a>
+              <button
+                id="checkout-button"
+                type="submit"
+                class="bg-primary text-white duration-150 cursor-pointer rounded-lg text-[13px] xl:text-base font-weight-600 h-9 border-1 border-primary hover:underline flex-1 text-nowrap flex items-center justify-center"
+              >
+                Próximo
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="flex-1 w-1/2 pl-16 flex-col">
+        <div id="checkout-products" class="flex flex-col gap-5 pb-4 text-primary"></div>
+        <div class="flex flex-row justify-between pt-4 border-t-2 border-black">
+          <span class="text-primary font-semibold text-4xl">Total</span>
+          <span id="price-total" class="text-primary font-semibold text-4xl"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,9 +1,8 @@
 import './router';
 import './toast';
-import './cart';
-import './auth';
 import { showToast } from './toast';
 import { getRole, logout, setRole } from './auth';
+import { getCart } from './cart';
 
 document.addEventListener('keydown', (event) => {
   if (event.ctrlKey && event.key === '`') {
@@ -36,8 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
     window.route('/pesquisar/produto-exemplo');
   });
 
-  const checkoutButton = document.querySelector('#checkout-button');
+  const checkoutButton = document.querySelector('#cart-checkout-button');
   checkoutButton.addEventListener('click', () => {
+    console.log('clicked');
     const role = getRole();
 
     if (!role) {
@@ -45,6 +45,11 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    window.route('/finalizar-compra');
+    if (getCart().length === 0) {
+      showToast('Adicione produtos ao carrinho para finalizar a compra.', 'error');
+      return;
+    }
+
+    window.route('/finalizar/1');
   });
 });

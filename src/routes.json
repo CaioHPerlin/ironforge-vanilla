@@ -23,6 +23,18 @@
     "title": "Cadastro",
     "description": "Crie uma conta."
   },
+  "/finalizar/1": {
+    "title": "Finalizar compra: 1",
+    "description": "Providencie seu endereço para finalizar a compra."
+  },
+  "/finalizar/2": {
+    "title": "Finalizar compra: 2",
+    "description": "Informações de pagamento para finalizar a compra."
+  },
+  "/finalizar/3": {
+    "title": "Compra finalizada!",
+    "description": "Compra finalizada."
+  },
   "/pesquisar/produto-exemplo": {
     "title": "Pesquisa por produto-exemplo",
     "description": "Pesquisa por produto-exemplo."

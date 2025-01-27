@@ -1,0 +1,186 @@
+<div class="2xl:container 2xl:mx-auto flex flex-col gap-4">
+  <div id="tags" class="w-full flex flex-row align-middle gap-2">
+    <button
+      class="hover:bg-primary hover:text-white duration-150 cursor-pointer rounded-lg text-[13px] xl:text-base font-weight-600 h-9 border-1 border-primary bg-white text-primary flex-1 text-nowrap flex items-center justify-center"
+    >
+      Placas de Vídeo
+    </button>
+    <button
+      class="hover:bg-primary hover:text-white duration-150 cursor-pointer rounded-lg text-[13px] xl:text-base font-weight-600 h-9 border-1 border-primary bg-white text-primary flex-1 text-nowrap flex items-center justify-center"
+    >
+      Placas-Mãe
+    </button>
+    <button
+      class="hover:bg-primary hover:text-white duration-150 cursor-pointer rounded-lg text-[13px] xl:text-base font-weight-600 h-9 border-1 border-primary bg-white text-primary flex-1 text-nowrap flex items-center justify-center"
+    >
+      Memórias
+    </button>
+    <button
+      class="hover:bg-primary hover:text-white duration-150 cursor-pointer rounded-lg text-[13px] xl:text-base font-weight-600 h-9 border-1 border-primary bg-white text-primary flex-1 text-nowrap flex items-center justify-center"
+    >
+      Processadores
+    </button>
+    <button
+      class="hover:bg-primary hover:text-white duration-150 cursor-pointer rounded-lg text-[13px] xl:text-base font-weight-600 h-9 border-1 border-primary bg-white text-primary flex-1 text-nowrap flex items-center justify-center"
+    >
+      Coolers
+    </button>
+    <button
+      class="hover:bg-primary hover:text-white duration-150 cursor-pointer rounded-lg text-[13px] xl:text-base font-weight-600 h-9 border-1 border-primary bg-white text-primary flex-1 text-nowrap flex items-center justify-center"
+    >
+      Fontes
+    </button>
+    <button
+      class="hover:bg-primary hover:text-white duration-150 cursor-pointer rounded-lg text-[13px] xl:text-base font-weight-600 h-9 border-1 border-primary bg-white text-primary flex-1 text-nowrap flex items-center justify-center"
+    >
+      Periféricos
+    </button>
+    <button
+      class="hover:bg-primary hover:text-white duration-150 cursor-pointer rounded-lg text-[13px] xl:text-base font-weight-600 h-9 border-1 border-primary bg-white text-primary flex-1 text-nowrap flex items-center justify-center"
+    >
+      Gabinetes
+    </button>
+    <button
+      class="hover:bg-primary hover:text-white duration-150 cursor-pointer rounded-lg text-[13px] xl:text-base font-weight-600 h-9 border-1 border-primary bg-white text-primary flex-1 text-nowrap flex items-center justify-center"
+    >
+      Armazenamento
+    </button>
+  </div>
+  <section class="bg-white rounded-xl px-7 pt-2.5 pb-12">
+    <h1 class="text-primary text-2xl font-semibold pb-2">Informação para Entrega</h1>
+    <div class="flex flex-row">
+      <div class="flex-1 pr-16 border-r-2 border-primary">
+        <form
+          aria-label="address-form"
+          class="px-2 mt-2 gap-2 flex flex-col"
+          id="addressForm"
+          novalidate
+        >
+          <div class="flex flex-col gap-1">
+            <label for="zip" class="text-primary">CEP</label>
+            <input
+              type="text"
+              class="border-1 border-primary px-4 py-2 rounded-lg"
+              id="zip"
+              name="zip"
+              placeholder="XXXXX-XX"
+              required
+            />
+            <small class="text-red-500 hidden" id="zipError">CEP inválido.</small>
+          </div>
+
+          <div class="flex flex-row gap-3">
+            <div class="flex-1 flex flex-col gap-1">
+              <label for="city" class="text-primary">Cidade</label>
+              <input
+                type="text"
+                class="border-1 border-primary px-4 py-2 rounded-lg"
+                id="city"
+                name="city"
+                placeholder="Insira sua Cidade"
+                required
+              />
+              <small class="text-red-500 hidden" id="cityError">Cidade inválida.</small>
+            </div>
+
+            <div class="flex-1 flex flex-col gap-1">
+              <label for="state" class="text-primary">Estado</label>
+              <select
+                type="text"
+                class="border-1 border-primary px-4 h-[42px] rounded-lg"
+                id="state"
+                name="state"
+                placeholder="Selecione seu Estado"
+                required
+              >
+                <option value="" class="text-gray-500">Selecione seu Estado</option>
+              </select>
+              <small class="text-red-500 hidden" id="stateError">Selecione um estado.</small>
+            </div>
+          </div>
+
+          <div class="flex flex-row gap-3">
+            <div class="flex-2 flex flex-col gap-1">
+              <label for="street" class="text-primary">Rua</label>
+              <input
+                type="text"
+                class="border-1 border-primary px-4 py-2 rounded-lg"
+                id="street"
+                name="street"
+                placeholder="Insira sua Rua"
+                required
+              />
+              <small class="text-red-500 hidden" id="streetError">Rua inválida.</small>
+            </div>
+
+            <div class="flex-1 flex flex-col gap-1">
+              <label for="city" class="text-primary">Número</label>
+              <input
+                type="number"
+                class="border-1 border-primary px-4 py-2 rounded-lg"
+                id="number"
+                name="number"
+                placeholder="N°"
+                required
+              />
+              <small class="text-red-500 hidden" id="numberError">Insira seu número.</small>
+            </div>
+          </div>
+
+          <div class="flex flex-row gap-3">
+            <div class="flex-1 flex flex-col gap-1">
+              <label for="city" class="text-primary">Bairro</label>
+              <input
+                type="text"
+                class="border-1 border-primary px-4 py-2 rounded-lg"
+                id="neighborhood"
+                name="neighborhood"
+                placeholder="Insira seu Bairro"
+                required
+              />
+              <small class="text-red-500 hidden" id="neighborhoodError">Insira seu bairro.</small>
+            </div>
+
+            <div class="flex-1 flex flex-col gap-1">
+              <label for="city" class="text-primary">Complemento</label>
+              <input
+                type="text"
+                class="border-1 border-primary px-4 py-2 rounded-lg"
+                id="complement"
+                name="complement"
+                placeholder="Insira um Complemento"
+                required
+              />
+              <small class="text-red-500 hidden" id="complementError">Complemento inválido.</small>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <div class="flex flex-row gap-4 mt-5 w-1/2 self-end">
+              <a
+                href="/"
+                class="hover:bg-primary text-center hover:text-white duration-150 cursor-pointer rounded-lg text-[13px] xl:text-base font-weight-600 h-9 border-1 border-primary bg-white text-primary flex-1 text-nowrap flex items-center justify-center"
+              >
+                Cancelar
+              </a>
+              <button
+                id="checkout-button"
+                type="submit"
+                class="bg-primary text-white duration-150 cursor-pointer rounded-lg text-[13px] xl:text-base font-weight-600 h-9 border-1 border-primary hover:underline flex-1 text-nowrap flex items-center justify-center"
+              >
+                Próximo
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="flex-1 pl-16 flex-col">
+        <div id="checkout-products" class="flex flex-col gap-5 pb-4 text-primary"></div>
+        <div class="flex flex-row justify-between pt-4 border-t-2 border-black">
+          <span class="text-primary font-semibold text-4xl">Total</span>
+          <span id="price-total" class="text-primary font-semibold text-4xl"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -68,8 +68,12 @@
           <button
             id="cartButton"
             aria-label="cart"
-            class="cursor-pointer text-white hover:bg-white hover:text-primary duration-150 border-2 border-white rounded-lg h-9 px-3"
+            class="relative cursor-pointer text-white hover:bg-white hover:text-primary duration-150 border-2 border-white rounded-lg h-9 px-3"
           >
+            <span
+              id="cart-quantity-container"
+              class="absolute -top-3 -right-2 font-bold bg-white text-secondary rounded-full aspect-square w-6 text-center"
+            ></span>
             <i class="bi bi-cart text-base xl:text-xl"></i>
           </button>
 
@@ -166,11 +170,12 @@
           >
             Cancelar
           </button>
-          <a
-            id="checkout-button"
+          <button
+            id="cart-checkout-button"
             class="bg-primary text-white duration-150 cursor-pointer rounded-lg text-[13px] xl:text-base font-weight-600 h-9 border-1 border-primary hover:underline flex-1 text-nowrap flex items-center justify-center"
-            >Finalizar Compra</a
           >
+            Finalizar Compra
+          </button>
         </div>
       </div>
     </div>
